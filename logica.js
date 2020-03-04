@@ -7,10 +7,19 @@ $(function () {
     //add();
 });
 
-function addUsuarios(datos) {
-    $.each()
-
-}
+/*
+function addNUsuarios(datos) {
+    $.each(datos, function(i, e) {
+        $('#u-tabla').append("<tr>" + 
+        "<td>" + e.name + "</td>" +
+        "<td>" + e.apellido + "</td>" +
+        "<td>" + e.sexo + "</td>" +
+        "<td> <a href='#' class='editar button'>Editar</a>" +
+        "<a href='#' class='eliminar button'>Eliminar</a></td>" +
+        "</tr>")
+    });
+} 
+*/
 
 function agregarUsuario() {
     $('form input[type=submit]').on('click', function (e) {
@@ -52,12 +61,30 @@ function editarUsuario() {
 }
 
 function guardarEdicionUsuario() {
-    $('#u-tabla').on('click', '.guardar', function(e){
-        e.preventDefaul();
-        var tr = $(this).closest('tr');
-    });
-}
+    $('#u-tabla').on('click','.guardar',function(e){
+        e.preventDefault();
 
-function name(params) {
+        var tr= $(this).closest('tr');
+        var tdNombre = tr.children("td:nth-child(1)");
+        var tdApellidos = tr.children("td:nth-child(2)");
+        var tdSexo =tr.children("td:nth-child(3)");
+        var tdOpciones = tr.children("td:nth-child(4)");
+
+        nuevoNombre = tdNombre.children("input[type=text]").val();
+        tdNombre.html(nuevoNombre);
+
+        nuevoApellidos = tdApellidos.children("input[type=text]").val();
+        tdApellidos.html(nueApellidos);
+
+        tdOpciones.html( "<a  href='#' class='editar button'> Editar</a>"+  
+                         "<a href='#' class='Eliminar button'> Eliminar</a>");
+    });
     
+}    
+
+function eliminar(x) {
+    $('#u-tabla').on('click', '.eliminar', function(e) {
+        e.preventDefault();
+        $(this).closest('tr').remove();
+    });
 }

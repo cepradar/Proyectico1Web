@@ -13,20 +13,89 @@
 
 <body>
 
-    <div class="container">
+    <div class="container p-3 my-3 bg-primary text-white">
         <h2>Form Grid</h2>
         <p>Create two form elements that appear side by side with .row and .col:</p>
+        </div>
         <form action="/action_page.php">
-            <div class="row">
-                <div class="col">
-                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label>N° Socio</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Nombre</label>
+                    </div>
+                    <div class="col-sm-1">
+                        <label>Estatura</label>
+                    </div>
+                    <div class="col-sm-1">
+                        <label>Edad</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Localidad</label>
+                    </div>
                 </div>
-                <div class="col">
-                    <input type="password" class="form-control" placeholder="Enter password" name="pswd">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                <div class="row">
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="nSocio" placeholder=" Numero Socio " name="nSocio">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder=" Nombre " name="nombre">
+                    </div>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" placeholder=" Estatura " name="estat">
+                    </div>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" placeholder=" Edad " name="edad">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder=" Localidad " name="localidad">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Añadir</button>
+                </div>    
+            </div>            
         </form>
+
+        <div class="container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Email</th>
+                  <th>Lastname</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>john@example.com</td>
+                  <th>Lastname</th>
+                  <th>Email</th>
+                </tr>
+                <tr>
+                  <td>Mary</td>
+                  <td>Moe</td>
+                  <td>mary@example.com</td>
+                  <th>Lastname</th>
+                  <th>Email</th>
+                </tr>
+                <tr>
+                  <td>July</td>
+                  <td>Dooley</td>
+                  <td>july@example.com</td>
+                  <th>Lastname</th>
+                  <th>Email</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+        <script type="text/javascript" src="./logica.js"></script>
+
     </div>
 
 </body>
