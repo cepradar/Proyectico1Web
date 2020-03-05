@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ejemplo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -16,88 +14,69 @@
     <div class="container p-3 my-3 bg-primary text-white">
         <h2>Form Grid</h2>
         <p>Create two form elements that appear side by side with .row and .col:</p>
-        </div>
-        <form action="/action_page.php">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-1">
-                        <label>N° Socio</label>
-                    </div>
-                    <div class="col-sm-3">
-                        <label>Nombre</label>
-                    </div>
-                    <div class="col-sm-1">
-                        <label>Estatura</label>
-                    </div>
-                    <div class="col-sm-1">
-                        <label>Edad</label>
-                    </div>
-                    <div class="col-sm-3">
-                        <label>Localidad</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control" id="nSocio" placeholder=" Numero Socio " name="nSocio">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" placeholder=" Nombre " name="nombre">
-                    </div>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control" placeholder=" Estatura " name="estat">
-                    </div>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control" placeholder=" Edad " name="edad">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" placeholder=" Localidad " name="localidad">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Añadir</button>
-                </div>    
-            </div>            
-        </form>
-
+    </div>
+    <form>
         <div class="container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Email</th>
-                  <th>Lastname</th>
-                  <th>Email</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>John</td>
-                  <td>Doe</td>
-                  <td>john@example.com</td>
-                  <th>Lastname</th>
-                  <th>Email</th>
-                </tr>
-                <tr>
-                  <td>Mary</td>
-                  <td>Moe</td>
-                  <td>mary@example.com</td>
-                  <th>Lastname</th>
-                  <th>Email</th>
-                </tr>
-                <tr>
-                  <td>July</td>
-                  <td>Dooley</td>
-                  <td>july@example.com</td>
-                  <th>Lastname</th>
-                  <th>Email</th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-        <script type="text/javascript" src="./logica.js"></script>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label>N° Socio</label>
+                </div>
+                <div class="col-sm-3">
+                    <label>Nombre</label>
+                </div>
+                <div class="col-sm-1">
+                    <label>Estatura</label>
+                </div>
+                <div class="col-sm-1">
+                    <label>Edad</label>
+                </div>
+                <div class="col-sm-3">
+                    <label>Localidad</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="nSocio" placeholder=" Numero Socio " name="nSocio">
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="nombre" placeholder=" Nombre " name="nombre">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="estatura" placeholder=" Estatura " name="estat">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="edad" placeholder=" Edad " name="edad">
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="localidad" placeholder=" Localidad " name="localidad">
+                </div>
+                <button type="submit" id="boton" class="btn btn-primary">Añadir</button>
+            </div>
+        </div>
+    </form>
 
+    <div class="container">
+        <table class="table" id="u-tabla">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="./logica.js"></script>
 </body>
 
 </html>

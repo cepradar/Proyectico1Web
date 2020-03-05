@@ -22,22 +22,29 @@ function addNUsuarios(datos) {
 */
 
 function agregarUsuario() {
-    $('form input[type=submit]').on('click', function (e) {
+    $('#boton').on('click', function (e) {
         e.preventDefault();
+        
+        var nSocio = $("#nSocio")
         var nombre = $("input[id=nombre]");
-        var apellidos = $("#apellidos");
-        var sexo = $("select[id=sexo]");
-        $('#u-tabla').append("<tr>" + "<td>" +
-            nombre.val() + "<td>" +
-            apellidos.val() + "<td>" +
-            sexo.val() + "<td>" +
-            "<td><a href'#' name='edit' class)'editar button'>Editas</a>" +
-            "<a href='#' class='eliminar button'>Eliminar</a></td>" +
+        var estatura = $("#estatura")
+        var edad = $("#edad");
+        var localidad = $("#localidad");
+
+        $('#u-tabla').append("<tr>" 
+                                    + "<td>" + nSocio.val() + "</td>"
+                                    + "<td>" + nombre.val() + "</td>"
+                                    + "<td>" + estatura.val() + "</td>"
+                                    + "<td>" + edad.val() + "</td>"
+                                    + "<td>" + localidad.val() + "</td>"
+            + "<td><a href'#' name='edit' class='editar button'>Editar</a>" + "<a href='#' class='eliminar button'>Eliminar</a></td>" +
             "</tr>");
 
+        nSocio.val('');
         nombre.val('');
-        apellidos.val('');
-        sexo.val('');
+        estatura.val('');
+        edad.val('');
+        localidad.val('');
 
     })
 }
