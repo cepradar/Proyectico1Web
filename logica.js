@@ -20,19 +20,19 @@ function addNUsuarios(datos) {
     });
 } 
 */
-
+var i=0;
 function agregarUsuario() {
     $('#boton').on('click', function (e) {
         e.preventDefault();
-        
+        i++;
         var nSocio = $("#nSocio")
-        var nombre = $("input[id=nombre]");
+        var nombre = $("input[id=nombre]"); 
         var estatura = $("#estatura")
         var edad = $("#edad");
         var localidad = $("#localidad");
 
         $('#u-tabla').append("<tr>" 
-                                    + "<td>" + nSocio.val() + "</td>"
+                                    + "<td>" + i + "</td>"
                                     + "<td>" + nombre.val() + "</td>"
                                     + "<td>" + estatura.val() + "</td>"
                                     + "<td>" + edad.val() + "</td>"
@@ -40,18 +40,16 @@ function agregarUsuario() {
             + "<td><button class='btn btn-primary editar'>Editar</button> &nbsp" + "<button class='btn btn-primary eliminar'>Eliminar</button></td>" +
             "</tr>");
 
-        nSocio.val('');
-        nombre.val('');
-        estatura.val('');
-        edad.val('');
-        localidad.val('');
+       
 
     })
 }
 
+
 function editarUsuario() {
     $('#u-tabla').on('click', '.editar', function (e) {
         e.preventDefault();
+        
         var tr = $(this).closest('tr');
         var tdNSocio = tr.children("td:nth-child(1)");
         var tdNombre = tr.children("td:nth-child(2)");
@@ -79,6 +77,49 @@ function editarUsuario() {
     });
 }
 
+
+
+function guardarEdicionUsuario() {
+    $('#u-tabla').on('click', '.guardar', function(e) {
+        e.preventDefault();
+        var tr = $(this).closest('tr');
+
+        var tdsocio = tr.children("td:nth-child(1)");
+        var tdnombre = tr.children("td:nth-child(2)");
+        var tdestatura = tr.children("td:nth-child(3)");
+        var tdedad = tr.children("td:nth-child(4)");
+        var tdlocalidad = tr.children("td:nth-child(5)"); 
+        var tdOpciones = tr.children("td:nth-child(6)");
+
+        nuevosocio = tdsocio.children("input[type=text]").val();
+        tdsocio.html(nuevosocio);
+
+        nuevonombre = tdnombre.children("input[type=text]").val();
+        tdnombre.html(nuevonombre);
+
+        nuevaestatura = tdestatura.children("input[type=text]").val();
+        tdestatura.html(nuevaestatura);
+
+        nuevaestatura = tdestatura.children("input[type=text]").val();
+        tdestatura.html(nuevaestatura);
+
+        nuevoEdad = tdedad.children("input[type=text]").val();
+        tdedad.html(nuevoEdad);
+
+       nuevalocalidad = tdlocalidad.children("input[type=text]").val();
+        tdlocalidad.html(nuevalocalidad);
+
+        tdOpciones.html( "<button class='btn btn-primary editar'>Editar</button>" + 
+                         "<button class='btn btn-primary eliminar'>Eliminar</button></td>");
+    });
+}
+
+
+
+
+
+
+/*
 function guardarEdicionUsuario() {
     $('#u-tabla').on('click','.guardar',function(e){
         e.preventDefault();
@@ -106,10 +147,11 @@ function guardarEdicionUsuario() {
         var nuevaLocalidad = tdLocalidad.children("input[type=text]").val();
         tdLocalidad.html(nuevaLocalidad);
 
-        tdOpciones.html( "<button class='btn btn-primary editar'>Editar</button>" + "<button class='btn btn-primary eliminar'>Eliminar</button></td>");
+        tdOpciones.html( "<button class='btn btn-primary editar'>Editar</button>" + 
+                         "<button class='btn btn-primary eliminar'>Eliminar</button></td>");
     });
-    
-}    
+    */
+//}    
 
 function eliminar(x) {
     $('#u-tabla').on('click', '.eliminar', function(e) {
